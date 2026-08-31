@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Hero palette — light section */
+    --hero-bg: 36 47% 96%;
+    --hero-ink: 215 18% 10%;
+    --hero-emerald: 193 62% 45%;
+    --hero-emerald-soft: 193 55% 50%;
+    --hero-cobalt: 38 90% 54%;
+    --hero-gold: 38 90% 54%;
+    --hero-muted: 215 10% 36%;
+
+    /* About palette — light section (matches hero) */
+    --about-bg: 36 47% 96%;
+    --about-ink: 215 18% 10%;
+    --about-muted: 215 10% 36%;
+    --about-emerald: 193 62% 45%;
+    --about-cobalt: 38 90% 54%;
+    --about-card: 0 0% 100%;
+    --about-border: 36 20% 88%;
+
+    /* Platforms palette — richer light section (deeper gradient mesh) */
+    --platforms-bg: 36 40% 95%;
+    --platforms-bg2: 36 30% 93%;
+    --platforms-ink: 215 18% 10%;
+    --platforms-muted: 215 10% 36%;
+    --platforms-emerald: 193 62% 45%;
+    --platforms-cobalt: 38 90% 54%;
+    --platforms-border: 36 20% 90%;
+
+    /* Services palette — LIGHT section */
+    --services-bg: 36 47% 96%;
+    --services-ink: 215 18% 10%;
+    --services-muted: 215 10% 36%;
+    --services-emerald: 193 62% 45%;
+    --services-border: 36 20% 88%;
+
+    /* Multi-layer 3D card shadow tokens */
+    --shadow-3d-sm:
+      0 2px 4px -1px rgba(20, 24, 27, 0.12),
+      0 8px 20px -6px rgba(20, 24, 27, 0.08);
+    --shadow-3d-md:
+      0 4px 8px -2px rgba(20, 24, 27, 0.14),
+      0 16px 40px -12px rgba(20, 24, 27, 0.1);
+    --shadow-3d-lg:
+      0 6px 12px -3px rgba(20, 24, 27, 0.16),
+      0 24px 60px -16px rgba(20, 24, 27, 0.12);
+    --shadow-3d-hover:
+      0 8px 16px -4px rgba(20, 24, 27, 0.2),
+      0 32px 80px -20px rgba(20, 24, 27, 0.16);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ── CSS keyframes for About section (GPU-accelerated, no JS) ── */
+@keyframes wfmpulse {
+  0%,
+  100% {
+    r: 11;
+    opacity: 0.6;
+  }
+  50% {
+    r: 24;
+    opacity: 0;
+  }
+}
+
+@keyframes dotpulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes gradshift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes glowpulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.4;
+  }
+}
+
+@keyframes glowpulse2 {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes tipglow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(-50%) translateX(50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(50%) scale(1.2);
+  }
+}
+
+@keyframes mfloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bglinedraw {
+  from {
+    stroke-dashoffset: 1200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hide scrollbar but keep scrollability (Certificates marquee) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[wfmpulse_2\.5s_ease-out_infinite\],
+  .animate-\[dotpulse_2s_ease-in-out_infinite\],
+  .animate-\[dotpulse_1\.5s_ease-in-out_infinite\],
+  .animate-\[gradshift_4s_linear_infinite\],
+  .animate-\[glowpulse_6s_ease-in-out_infinite\],
+  .animate-\[glowpulse2_8s_ease-in-out_infinite\],
+  .animate-\[tipglow_1\.5s_ease-in-out_infinite\],
+  .animate-\[mfloat_4s_ease-in-out_infinite\],
+  .bg-line-art path {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
